@@ -1,0 +1,21 @@
+<h1>Decrypt with key</h1>
+
+<form action="/decrypt" method="post">
+    {% csrf_token %}
+    <input type="text" name="text" placeholder="Enter text to decrypt">
+    <input type="text" name="key" placeholder="Enter key">
+    <input type="submit" value="Decrypt">
+</form>
+
+<h1>Decrypted message :</h1>
+<h2>{{ decrypted_message }}</h2>
+
+<script>
+    window.onload = function () {
+    // Check if the page is loaded due to a refresh
+    if (performance.navigation.type === 1) {
+        // Clear any data related to the previous form submission
+        sessionStorage.removeItem('formSubmitted');
+    }
+}
+</script>

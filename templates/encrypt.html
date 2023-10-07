@@ -1,0 +1,33 @@
+<h1>Encrypt With Key</h1>
+
+<form action="/encrypt" method="post">
+    {% csrf_token %}
+
+    <textarea name="text" id="" cols="30" rows="10"></textarea>
+    <!-- <input type="text" name="text" placeholder="Enter text to encrypt"> -->
+
+    <!-- <input type="text" name="key" placeholder="Enter key"> -->
+
+    <input type="submit" value="Encrypt">
+
+</form>
+<!-- ```Print Output And Generated Key''' -->
+
+<!-- Path: Cryptography_tool/views.py -->
+
+<div>
+    <p>Encrypted message : {{ msg }}</p>
+<p>Key : {{ key }}</p>
+</div>
+
+
+<script>
+    window.onload = function () {
+    // Check if the page is loaded due to a refresh
+    if (performance.navigation.type === 1) {
+        // Clear any data related to the previous form submission
+        sessionStorage.removeItem('formSubmitted');
+    }
+}
+</script>
+
